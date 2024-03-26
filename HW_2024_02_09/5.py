@@ -8,3 +8,11 @@ def is_valid_move(first_coordinate, second_coordinate):
         return "нет"
 
 print(is_valid_move(first_coordinate, second_coordinate))
+
+# Введите начальную координату ладьи: f1
+# Введите конечную координату ладьи: e2
+# нет
+
+# Введите начальную координату ладьи: f1
+# Введите конечную координату ладьи: g1
+# да

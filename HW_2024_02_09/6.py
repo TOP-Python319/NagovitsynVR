@@ -12,3 +12,11 @@ def is_valid_move(first_coordinate, second_coordinate):
     return "да"
     
 print(is_valid_move(first_coordinate, second_coordinate))
+
+# Введите начальную координату короля: a1
+# Введите конечную координату короля: a7
+# нет
+
+# Введите начальную координату короля: a1
+# Введите конечную координату короля: a2
+# да
