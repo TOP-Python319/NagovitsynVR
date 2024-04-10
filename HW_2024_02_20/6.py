@@ -16,3 +16,7 @@ def is_lucky_ticket(ticket:int):
 
 is_lucky_ticket(123456)
 is_lucky_ticket(183534)
+
+
+# комментарий преподавателя:
+# всё верно
