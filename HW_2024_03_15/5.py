@@ -36,3 +36,14 @@ print(scores)
 # Введите слово: синхрофазотрон
 # 29           
         
+
+# Комментарий преподавателя:
+# решение верное, однако немного не оптимально.
+# нужно чтобы количество очков тоже бралось из словаря.
+
+# например так:
+# for char in word:
+#     for score, letters in scores_letters.items():
+#      if char in letters:
+#             result += score
+#             break 
