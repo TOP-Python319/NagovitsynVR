@@ -2,14 +2,19 @@ class DictMixin:
     def to_dict(self):
         result = {}
         for k, v in self.__dict__.items():
-            if not callable(v) and not k.startswith('__'):
-                if isinstance(v, DictMixin):
-                    result[k] = v.to_dict()
-                elif isinstance(v, list):
-                    result[k] = [x.to_dict() if isinstance(x, DictMixin) else x for x in v]
-                else:
-                    result[k] = v
+            if isinstance(v, (DictMixin, list)):
+                result[k] = self.convert_to_dict(v)
+            else:
+                result[k] = v
         return result
+
+    def convert_to_dict(self, obj):
+        if isinstance(obj, DictMixin):
+            return obj.to_dict()
+        elif isinstance(obj, list):
+            return [self.convert_to_dict(item) for item in obj]
+        else:
+            return obj
 
 class Phone(DictMixin):
     def __init__(self, number):
@@ -32,6 +37,7 @@ class Company(DictMixin):
     def __init__(self, name, address):
         self.name = name
         self.address = address
+
 
 address = Address("123 Main St", "Anytown", "CA", "12345")
 john_doe = Person("John Doe", 30, address)
